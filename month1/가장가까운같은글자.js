@@ -1,8 +1,8 @@
-s = 'banana';
+const s = 'banana';
 
 function solution(s) {
-  var answer = [];
-  var temp = [];
+  let answer = [];
+  let temp = [];
 
   for (let i = 0; i < s.length; i++) {
     if (!temp.includes(s[i])) {
@@ -18,4 +18,4 @@ function solution(s) {
   return answer;
 }
 
-console.log(solution(s));
+solution(s);
