@@ -1,15 +1,20 @@
 const d = [1, 3, 2, 5, 4];
 
 function solution(d, budget) {
-  var answer = 0;
+  let answer = 0;
+
   d.sort((a, b) => a - b);
-  for (let i = 0; i < d.length; i++) {
-    if (budget < d[i]) {
-      break;
+
+  d.some((v) => {
+    if (budget < v) {
+      return true; // 이 조건이 true이면 반복을 중단
     }
-    budget -= d[i];
+    budget -= v;
     answer++;
-  }
+    return false; // 반복 계속
+  });
+
+  console.log(budget);
   return answer;
 }
 
